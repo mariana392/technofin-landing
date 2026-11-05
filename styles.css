@@ -42,7 +42,10 @@
   .header.is-open .burger span:nth-child(2) { opacity: 0; }
   .header.is-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .nav > a:not(.pill) { font-size: 16px; line-height: 28px; color: var(--body); transition: color .2s; }
-  .nav > a:not(.pill):hover { color: var(--ink); }
+  .nav > a:not(.pill):hover { color: var(--navy); font-weight: 600; }
+  /* Резервуємо ширину жирного тексту, щоб меню не «стрибало» при наведенні */
+  .nav > a[data-text] { display: inline-flex; flex-direction: column; }
+  .nav > a[data-text]::after { content: attr(data-text); font-weight: 600; height: 0; overflow: hidden; visibility: hidden; pointer-events: none; }
 
   /* Hero */
   .hero { display: flex; gap: 12px; padding: 20px; }
