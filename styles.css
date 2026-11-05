@@ -41,7 +41,7 @@
   .header.is-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .header.is-open .burger span:nth-child(2) { opacity: 0; }
   .header.is-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav > a:not(.pill) { color: rgba(11,19,32,.6); }
+  .nav > a:not(.pill) { font-size: 16px; line-height: 28px; color: var(--body); transition: color .2s; }
   .nav > a:not(.pill):hover { color: var(--ink); }
 
   /* Hero */
@@ -177,7 +177,7 @@
       opacity: 0; transform: translateY(-8px); visibility: hidden; pointer-events: none;
       transition: opacity .25s, transform .25s, visibility 0s .25s; }
     .header.is-open .nav { opacity: 1; transform: none; visibility: visible; pointer-events: auto; transition: opacity .25s, transform .25s; }
-    .nav > a:not(.pill) { padding: 16px 0; border-bottom: 1px solid rgba(11,19,32,.08); font-size: 16px; color: var(--ink); }
+    .nav > a:not(.pill) { padding: 14px 0; border-bottom: 1px solid rgba(11,19,32,.08); }
     .nav > a.is-active { font-weight: 600; }
     .nav .pill--dark { margin-top: 16px; justify-content: center; padding: 14px 20px; }
 
