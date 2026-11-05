@@ -34,6 +34,13 @@
   .logo { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 15px; letter-spacing: .6px; }
   .logo img { width: 32px; height: 32px; }
   .nav { display: flex; align-items: center; gap: 32px; font-size: 14px; }
+  .header { position: relative; }
+  .burger { display: none; width: 44px; height: 44px; margin-right: -10px; border: 0; background: none; cursor: pointer;
+    flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+  .burger span { display: block; width: 22px; height: 2px; border-radius: 2px; background: var(--ink); transition: transform .25s, opacity .2s; }
+  .header.is-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .header.is-open .burger span:nth-child(2) { opacity: 0; }
+  .header.is-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
   .nav > a:not(.pill) { color: rgba(11,19,32,.6); }
   .nav > a:not(.pill):hover { color: var(--ink); }
 
@@ -161,9 +168,18 @@
   /* ---------- Phone (≤600px) ---------- */
   @media (max-width: 600px) {
     .header { height: 64px; padding: 0 16px; }
-    .nav { gap: 16px; }
-    .nav > a:not(.pill) { display: none; }
-    .pill--dark { padding: 8px 16px; }
+
+    /* Бургер-меню */
+    .burger { display: flex; }
+    .nav { position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
+      flex-direction: column; align-items: stretch; gap: 0; padding: 8px 16px 20px;
+      background: #fff; border-bottom: 1px solid rgba(11,19,32,.1); box-shadow: 0 18px 40px rgba(11,19,32,.12);
+      opacity: 0; transform: translateY(-8px); visibility: hidden; pointer-events: none;
+      transition: opacity .25s, transform .25s, visibility 0s .25s; }
+    .header.is-open .nav { opacity: 1; transform: none; visibility: visible; pointer-events: auto; transition: opacity .25s, transform .25s; }
+    .nav > a:not(.pill) { padding: 16px 0; border-bottom: 1px solid rgba(11,19,32,.08); font-size: 16px; color: var(--ink); }
+    .nav > a.is-active { font-weight: 600; }
+    .nav .pill--dark { margin-top: 16px; justify-content: center; padding: 14px 20px; }
 
     .hero { padding: 12px; gap: 8px; }
     .hero-card { min-height: 560px; }
