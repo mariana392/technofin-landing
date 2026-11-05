@@ -41,7 +41,7 @@
   .header.is-open .burger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
   .header.is-open .burger span:nth-child(2) { opacity: 0; }
   .header.is-open .burger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-  .nav > a:not(.pill) { font-size: 16px; line-height: 28px; color: var(--body); transition: color .2s; }
+  .nav > a:not(.pill) { font-size: 16px; line-height: 28px; color: var(--body); white-space: nowrap; transition: color .2s; }
   .nav > a:not(.pill):hover { color: var(--navy); font-weight: 600; }
   /* Резервуємо ширину жирного тексту, щоб меню не «стрибало» при наведенні */
   .nav > a[data-text] { display: inline-flex; flex-direction: column; }
@@ -168,10 +168,8 @@
     .contact-right { width: 100%; }
   }
 
-  /* ---------- Phone (≤600px) ---------- */
-  @media (max-width: 600px) {
-    .header { height: 64px; padding: 0 16px; }
-
+  /* ---------- Бургер-меню (≤900px) ---------- */
+  @media (max-width: 900px) {
     /* Бургер-меню */
     .burger { display: flex; }
     .nav { position: absolute; top: 100%; left: 0; right: 0; z-index: 60;
@@ -183,6 +181,12 @@
     .nav > a:not(.pill) { padding: 14px 0; border-bottom: 1px solid rgba(11,19,32,.08); }
     .nav > a.is-active { font-weight: 600; }
     .nav .pill--dark { margin-top: 16px; justify-content: center; padding: 14px 20px; }
+  }
+
+  /* ---------- Phone (≤600px) ---------- */
+  @media (max-width: 600px) {
+    .header { height: 64px; padding: 0 16px; }
+
 
     .hero { padding: 12px; gap: 8px; }
     .hero-card { min-height: 560px; }
