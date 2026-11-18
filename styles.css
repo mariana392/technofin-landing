@@ -109,6 +109,29 @@
   .tile { width: 330px; height: 330px; padding: 20px; background: #fff; border-radius: 12px; box-shadow: 0 18px 50px rgba(1,18,24,.22); }
   .tile img { width: 290px; height: 290px; }
 
+  /* Product (Tempo) */
+  .product { background: #f1f3f5; padding: 0 20px; }
+  .product__wrap { background: #f4f6f8; padding: 0 0 96px; }
+  .product-card { display: flex; background: #fff; border-radius: 18px; box-shadow: 0 18px 60px rgba(11,19,32,.09); overflow: hidden; }
+  .product-visual { width: 440px; flex-shrink: 0; margin: 16px; border-radius: 14px; padding: 32px; min-height: 440px;
+    display: flex; flex-direction: column; justify-content: space-between; align-items: flex-start; color: #fff;
+    background: radial-gradient(circle 693px at 15% 15%, #214762 0%, #162d41 25%, #101f31 37.5%, #0a1220 50%); }
+  .product-visual__top { width: 100%; display: flex; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,.15); color: rgba(255,255,255,.55); letter-spacing: 1.92px; }
+  .product-visual__logo { width: 240px; height: auto; }
+  .product-visual__note { font-size: 14px; line-height: 20px; color: rgba(255,255,255,.65); }
+  .product-content { flex: 1; padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+  .product-content .display { margin-top: 32px; }
+  .product-content .text { margin-top: 28px; max-width: 560px; font-size: 16px; line-height: 28px; color: var(--body); }
+  .product-content .text { max-width: 640px; }
+  .product-content h3 { margin-top: 40px; font-size: 14px; line-height: 20px; font-weight: 600; }
+  .product-content .benefits { margin-top: 24px; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px 24px; }
+  .product-steps .title { max-width: none; }
+  .product-audience { margin-top: 48px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+  .product-audience__head { padding-bottom: 16px; border-bottom: 1px solid rgba(11,19,32,.15); color: var(--muted); letter-spacing: 1.92px; }
+  .product-audience ul { list-style: none; margin: 0; padding: 0; }
+  .product-audience li { position: relative; padding: 12px 0 12px 20px; border-bottom: 1px solid rgba(11,19,32,.08); font-size: 14px; line-height: 22px; color: var(--body); }
+  .product-audience li::before { content: ""; position: absolute; left: 0; top: 20px; width: 6px; height: 6px; border-radius: 50%; background: #FA6F37; }
+
   /* Company */
   .company { background: #0a1220; padding: 20px; }
   .company__box { display: flex; border: 1px solid rgba(255,255,255,.1); border-radius: 18px; overflow: hidden; }
@@ -143,6 +166,8 @@
     .mission-content { width: 55%; }
     .benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .company__left { width: 45%; }
+    .product-visual { width: 32%; }
+    .product-content { padding: 40px; }
     .company__right p.big { font-size: 24px; }
     .contact-card { padding: 80px 48px; }
     .contact-right { width: 360px; }
@@ -161,6 +186,10 @@
     .mission-card { flex-direction: column; }
     .mission-content { width: 100%; }
     .visual { min-height: 420px; }
+    .product-card { flex-direction: column; }
+    .product-visual { width: auto; min-height: 340px; }
+    .product-content { padding: 40px; }
+    .product-audience { grid-template-columns: 1fr; }
     .company__box { flex-direction: column; }
     .company__left { width: 100%; height: auto; min-height: 360px; padding: 40px; gap: 64px; }
     .company__right { padding: 40px; gap: 40px; }
@@ -208,6 +237,16 @@
     .visual { min-height: 320px; }
     .tile { width: 240px; height: 240px; padding: 14px; }
     .tile img { width: 212px; height: 212px; }
+
+    .product { padding: 0 12px; }
+    .product__wrap { padding: 0 0 48px; }
+    .product-visual { margin: 12px; padding: 24px; min-height: 280px; }
+    .product-visual__logo { width: 180px; }
+    .product-visual__top { letter-spacing: 1.2px; }
+    .product-content { padding: 24px; }
+    .product-content .display { margin-top: 24px; }
+    .product-content .benefits { grid-template-columns: 1fr; gap: 20px; }
+    .product-audience { margin-top: 40px; }
 
     .company, .contact { padding: 12px; }
     .company__left { padding: 24px; min-height: 280px; }
