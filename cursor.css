@@ -1,0 +1,52 @@
+/* ---------- Кастомний курсор (лише для миші) ---------- */
+:root { --cursor-ink: #ece9e2; --cursor-ease: cubic-bezier(.16, 1, .3, 1); }
+
+/* Системний курсор ховаємо лише коли скрипт увімкнув кастомний */
+html.has-cursor, html.has-cursor * { cursor: none !important; }
+html.has-cursor input, html.has-cursor textarea, html.has-cursor select,
+html.has-cursor [contenteditable="true"] { cursor: text !important; }
+
+.cursor, .cursor-ring, .cursor-badge {
+  position: fixed; top: 0; left: 0; pointer-events: none;
+  opacity: 0; transition: opacity .3s; will-change: transform;
+}
+.is-visible .cursor, .is-visible .cursor-ring, .is-visible .cursor-badge { opacity: 1; }
+
+/* Крапка 6px — точно за мишею, інвертує кольори під собою */
+.cursor { z-index: 1002; mix-blend-mode: difference; }
+.cursor__dot {
+  position: absolute; left: -3px; top: -3px; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--cursor-ink); transition: transform .2s var(--cursor-ease);
+}
+
+/* Кільце 40px — доганяє з плавністю (lerp 0.18) */
+.cursor-ring { z-index: 1001; mix-blend-mode: difference; }
+.cursor-ring__in {
+  position: absolute; left: -20px; top: -20px; width: 40px; height: 40px; border-radius: 50%;
+  border: 1px solid rgba(236, 233, 226, .5); box-sizing: border-box;
+  transition: transform .28s var(--cursor-ease), background-color .28s var(--cursor-ease);
+}
+
+/* Бейдж-пігулка з текстом та іконкою */
+.cursor-badge { z-index: 1003; }
+.cursor-badge__in {
+  display: inline-flex; gap: 6px; align-items: center; padding: 6px 12px;
+  background: var(--navy, #122a3d); color: #fff; border-radius: 999px;
+  box-shadow: 0 10px 24px rgba(7, 16, 29, .25);
+  font: 600 11px/16px 'Inter', sans-serif; letter-spacing: .12em; text-transform: uppercase; white-space: nowrap;
+  transform: translate(16px, 16px) scale(0); transform-origin: left top;
+  transition: transform .28s var(--cursor-ease);
+}
+.cursor-badge__in .icon:empty { display: none; }
+
+/* Стани */
+.state-hover .cursor-ring__in { transform: scale(1.55); background: rgba(236, 233, 226, .08); }
+.state-press .cursor-ring__in { transform: scale(.75); background: rgba(236, 233, 226, .18); }
+.state-hover.state-press .cursor-ring__in { transform: scale(1.25); }
+.state-badge .cursor-ring__in { transform: scale(.48); }
+.state-badge .cursor-badge__in { transform: translate(16px, 16px) scale(1); }
+.state-text .cursor, .state-text .cursor-ring, .state-text .cursor-badge { opacity: 0 !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor__dot, .cursor-ring__in, .cursor-badge__in { transition: none; }
+}

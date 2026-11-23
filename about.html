@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=23">
+<link rel="stylesheet" href="cursor.css">
 <link rel="stylesheet" href="about.css">
 </head>
 <body>
@@ -114,11 +115,11 @@
         <div class="block__head"><span class="block__num">06</span><span class="eyebrow" style="color:var(--muted)">Документи та реквізити</span></div>
         <h2>Документи компанії</h2>
         <div class="docs">
-          <a class="doc-card doc-card--navy" href="#">
+          <a data-cursor-label="Відкрити" data-cursor-icon="↗" class="doc-card doc-card--navy" href="#">
             <span class="eyebrow">Документи та реквізити</span>
             <span class="doc-card__bottom"><span class="doc-card__title">Переглянути</span><span class="btn"><img src="assets/arrow-white.svg" alt=""></span></span>
           </a>
-          <a class="doc-card doc-card--teal" href="reports.html">
+          <a data-cursor-label="Відкрити" data-cursor-icon="↗" class="doc-card doc-card--teal" href="reports.html">
             <span class="eyebrow">Звіти</span>
             <span class="doc-card__bottom"><span class="doc-card__title">Фінансова звітність</span><span class="btn"><img src="assets/arrow-white.svg" alt=""></span></span>
           </a>
@@ -166,5 +167,6 @@
 <style>html { scroll-behavior: smooth; }</style>
 <script src="to-top.js?v=2"></script>
 <script src="menu.js"></script>
+<script src="cursor.js"></script>
 </body>
 </html>

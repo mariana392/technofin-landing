@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Manrope:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css?v=23">
+<link rel="stylesheet" href="cursor.css">
 </head>
 <body>
 
@@ -37,9 +38,9 @@
       </div>
     </div>
   </div>
-  <a class="rail rail--mission" href="#mission"><img class="ring" src="assets/ring.svg" alt=""><span class="label">МІСІЯ ПРОЕКТУ</span><span class="btn"><img src="assets/arrow-down.svg" alt=""></span></a>
-  <a class="rail rail--company" href="#company"><img class="ring" src="assets/ring.svg" alt=""><span class="label">ПРО КОМПАНІЮ</span><span class="btn"><img src="assets/arrow-down.svg" alt=""></span></a>
-  <a class="rail rail--contacts" href="#contact"><img class="ring" src="assets/ring.svg" alt=""><span class="label">КОНТАКТИ</span><span class="btn"><img src="assets/arrow-down.svg" alt=""></span></a>
+  <a class="rail rail--mission" data-cursor-label="Перейти" data-cursor-icon="↓" href="#mission"><img class="ring" src="assets/ring.svg" alt=""><span class="label">МІСІЯ ПРОЕКТУ</span><span class="btn"><img src="assets/arrow-down.svg" alt=""></span></a>
+  <a class="rail rail--company" data-cursor-label="Перейти" data-cursor-icon="↓" href="#company"><img class="ring" src="assets/ring.svg" alt=""><span class="label">ПРО КОМПАНІЮ</span><span class="btn"><img src="assets/arrow-down.svg" alt=""></span></a>
+  <a class="rail rail--contacts" data-cursor-label="Перейти" data-cursor-icon="↓" href="#contact"><img class="ring" src="assets/ring.svg" alt=""><span class="label">КОНТАКТИ</span><span class="btn"><img src="assets/arrow-down.svg" alt=""></span></a>
 </section>
 
 <section class="mission" id="mission">
@@ -162,5 +163,6 @@
 
 <script src="to-top.js?v=2"></script>
 <script src="menu.js"></script>
+<script src="cursor.js"></script>
 </body>
 </html>
